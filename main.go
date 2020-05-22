@@ -1,11 +1,11 @@
 package main
 
-import "github.com/gin-gonic/gin"
+import (
+		"gojenkis/router"
+)
 
 func main() {
-	r := gin.Default()
-	r.GET("/", func(c *gin.Context) {
-		c.String(200, "Get请求成功!")
-	})
-	r.Run(":8090") // listen and serve on 0.0.0.0:8080
+
+	router := router.InitRouter()
+	router.Run(":8090")
 }
